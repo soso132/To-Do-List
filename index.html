@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Checklist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Title and Progress Container -->
+        <div class="title-progress-container">
+            <h1>TASK CHECKLIST</h1> <!-- Title -->
+            <div id="progressCircle" class="progress-circle">
+                <p id="progressText" class="progress-text">0/0</p> <!-- Progress text inside the circle -->
+            </div>
+        </div>
+
+        <!-- Progress bar directly under the title -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <span id="progressBar">
+                    <span id="progressPercentage">0%</span> <!-- Add the percentage inside the progress bar -->
+                </span>
+            </div>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="add-task">
+            <input type="text" id="newTaskInput" placeholder="Type your task here...">
+            <button id="addTaskBtn">+</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

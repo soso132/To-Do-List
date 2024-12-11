@@ -1,0 +1,295 @@
+/* Global body styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6ad5ff, #0026ff); /* Blue gradient background */
+}
+
+/* Container for the checklist */
+.container {
+  width: 500px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for the 'water' look */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  backdrop-filter: blur(10px); /* Slight blur effect to create a 'frosted glass' look */
+}
+
+/* Title and Progress Container (Flexbox for Title and Progress Text) */
+.title-progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This pushes the progress circle to the right */
+    margin-bottom: 20px; /* Adds space between the title and the progress bar */
+}
+
+/* Heading for the checklist */
+h1 {
+    font-size: 30px;
+    margin: 0; /* Remove margin to avoid extra space */
+    background: linear-gradient(to right, #0489e8, 
+    #1558d4, #1558d4, #0283df); 
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text; 
+}
+
+/* Circle container for progress text */
+.progress-circle {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Circular shape */
+    background: linear-gradient(135deg, #55fff1, #0026ff); /* Blue gradient background */
+    color: white;
+    font-size: 18px;
+    line-height: 60px; /* Center the text vertically */
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Progress Text inside the circle */
+.progress-text {
+    margin: 0; /* No margin to center the text perfectly */
+}
+
+/* Progress bar styling */
+.progress-bar {
+    width: 100%;
+    height: 19px;
+    background-color: #dbe6f1; /* Light blue for progress bar background */
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%; 
+    background: transparent; /* Blue gradient background */
+    border-radius: 10px;
+    position: relative;
+    padding: 17px;
+
+}
+
+/* Styling the percentage inside the progress bar */
+#progressPercentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the percentage */
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Task list styling */
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 350px; /* Set the height limit for the task list */
+    overflow-y: auto; /* Enable vertical scrolling when there are too many tasks */
+    margin-top: 20px;
+}
+
+/* Task item styling */
+.taskItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 0;
+    padding: 10px;
+    background-color: rgba(240, 248, 255, 0.8); /* Transparent light blue background */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for task items */
+.taskItem:hover {
+    background-color: rgba(220, 240, 255, 0.9); /* Slightly lighter background on hover */
+    transform: scale(1.0);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Style for the task text (editable) */
+.taskText {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 12px;
+    background-color: rgba(240, 248, 255, 0.8); /* Transparent blue background */
+    color: #000000;
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+}
+
+/* Focus effect for task text */
+.taskText:focus {
+    background-color: rgba(230, 247, 255, 0.9); /* Lighter blue on focus */
+}
+
+/* Checkbox styling */
+.checkbox {
+    margin-right: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for the checkbox */
+.checkbox:hover {
+    transform: scale(1.1);
+}
+
+/* Delete button styling */
+.delete-btn {
+    background-color: #0263cb; /* Blue button */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%; /* Circular delete button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+}
+
+/* Hover effect for delete button */
+.delete-btn:hover {
+    background-color: #00408b; /* Darker blue on hover */
+    transform: scale(1.0); /* Slight scale effect on hover */
+}
+
+/* Section to add a new task */
+.add-task {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Input field for adding a new task */
+#newTaskInput {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #007bff; /* Blue border */
+    font-size: 17px;
+    background-color: rgba(240, 248, 255, 0.8); /* Transparent blue background */
+    color: #333;
+    transition: background-color 0.3s ease;
+    margin-left: 45px;
+}
+
+/* Focus effect for new task input */
+#newTaskInput:focus {
+    background-color: rgba(247, 252, 255, 0.9); /* Lighter blue on focus */
+}
+
+/* Add Task Button */
+#addTaskBtn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #55fff1, #0026ff); /* Blue gradient background */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    margin-left: 16px; /* Small gap between the input and the button */
+}
+
+/* Hover effect for the Add Task Button */
+#addTaskBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Styling the task text when completed */
+.taskItem.completed .taskText {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #e0e0e0; /* Light gray background for completed tasks */
+}
+
+/* Task Counter styling */
+.task-counter {
+    font-size: 16px;
+    color: #003366;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 15px; /* Space between counter and task list */
+}
+
+/* Make the task item a flex container to align items horizontally */
+.taskItem {
+  display: flex;
+  align-items: center;  /* Center items vertically */
+  justify-content: flex-start;  /* Align items to the left */
+  margin: 12px 0;
+  padding: 10px;
+  background-color: rgba(240, 248, 255, 0.8); /* Transparent light blue background */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Style for the checkbox (hide the default one) */
+.checkbox {
+  display: none; /* Hide the default checkbox */
+}
+
+/* Style for the custom checkbox label */
+.checkbox + label {
+  position: relative;
+  display: inline-block;
+  width: 20px;   /* Smaller width */
+  height: 20px;  /* Smaller height */
+  background-color: #fff;
+  border: 2px solid #007bff;  /* Blue border */
+  border-radius: 5px;  /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin-right: 10px;  /* Space between checkbox and task text */
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Center checkmark inside the label */
+}
+
+/* Checkmark appearance when checked */
+.checkbox:checked + label::after {
+  content: '\2713';  /* Unicode checkmark character */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;  /* Blue color for the checkmark */
+  font-size: 13px;  /* Adjusted for smaller checkboxes */
+  text-align: center;
+  line-height: 20px;  /* Center the checkmark vertically */
+}
+
+/* Hover effect for custom checkbox */
+.checkbox + label:hover {
+  background-color: #f0f8ff; /* Light blue background on hover */
+}
+
+/* When checkbox is checked */
+.checkbox:checked + label {
+  background-color: #007bff;  /* Background color when checked */
+  border-color: #007bff;
+}
+
+/* Hover effect for checked checkbox */
+.checkbox:checked + label:hover {
+  background-color: #005bb5;  /* Darker blue on hover when checked */
+}
